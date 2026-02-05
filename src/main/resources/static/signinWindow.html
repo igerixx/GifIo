@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+  <link rel="stylesheet" crossorigin href="/assets/login-B-OEWtp-.css">
+</head>
+<body>
+
+    <div class="welcome-container">
+        <h1>Welcome to GifIo</h1>
+        <img src="https://i.pinimg.com/originals/57/61/5b/57615b8c0092a66c1d4058b1692955cc.gif">
+    </div>
+
+    <div id="app" class="sighin-container">
+        <p id="status"></p>
+
+        <input
+        name="name"
+        type="text" 
+        placeholder="Enter username or email"
+        v-model="usernameOrEmail"
+        >
+        <input
+        name="password"
+        type="password" 
+        placeholder="Enter password"
+        v-model="password"
+        >
+        
+        <div style="flex-direction: row; display: flex; gap: 2%; justify-content: center;">
+            <div
+            class="login-button"
+            @click="login"
+            >
+                Log in
+            </div>
+            <div
+            class="create-button"
+            @click="register"
+            >
+                Create account
+            </div>
+        </div>
+    </div>
+
+    <script src="signin.js"></script>
+</body>
+</html>

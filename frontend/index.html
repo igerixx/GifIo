@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="alert-window" id="alertEl">
+		You need to Sign in
+	</div>
+
+	<div class="back">
+		<img id="back-btn" src="https://static.thenounproject.com/png/65506-200.png">
+		<p id="title">Gif Io</p>
+	</div>
+	
+	<div id="app">
+		<div class="left">
+			<div 
+			id="favourite"
+			class="favourites"
+			@click="favourites"
+			>
+				Favourites
+			</div>
+		</div>
+
+		<div class="search-container">
+			<input
+			id="search"
+			v-model="text"
+  			@keyup.enter="enter"
+			type="text">
+		</div>
+
+		<div class="rigth">
+			<div id="account"
+			onclick="window.location.href='/signinWindow.html'"
+			>
+				Sign in
+			</div>
+		</div>
+	</div>
+
+	<div class="gif-container">
+		<div class="gif-1column">
+			<!-- <div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star-deactive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div>
+			<div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star-deactive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div>
+			<div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star-deactive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div>
+			<div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star-deactive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div>
+			<div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star-deactive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div>
+			<div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star-deactive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div>
+			<div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star-deactive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div> -->
+
+		</div>
+		<div class="gif-2column">
+			<!-- <div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div> -->
+		</div>
+		<div class="gif-3column">
+			<!-- <div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" style="enable-background:new 0 0 600 450;" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div> -->
+		</div>
+		<div class="gif-4column">
+			<!-- <div class="gif-wraper">
+				<img src="https://media4.giphy.com/media/rT7WPCciy8oETxLmUV/200_d.gif?cid=2bec534f96q7xrumsq7bfihl5d4i9guf8rhns6sz2dz4l308&amp;ep=v1_gifs_search&amp;rid=200_d.gif&amp;ct=g">
+				<div class="gif-wraper-copy">Copy</div>
+				<svg class="star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 600 450" xml:space="preserve">
+				<g>
+					<path class="st0" d="M331.9,56.7l32.6,79.8c2.5,6.2,8,10.1,14.6,10.6l86,6.4c14.2,1,25.7,10.1,30.1,23.6
+						c4.4,13.5,0.4,27.6-10.5,36.8l-65.9,55.7c-5.1,4.3-7.2,10.7-5.6,17.2l20.5,83.8c3.4,13.8-1.6,27.6-13.2,35.9
+						c-11.5,8.4-26.1,8.9-38.2,1.4l-82.4-51l-82.4,51c-12.1,7.5-26.7,7-38.2-1.4c-11.5-8.4-16.5-22.1-13.2-35.9l20.5-83.8
+						c1.6-6.5-0.5-12.9-5.6-17.2l-65.9-55.7c-10.9-9.2-14.9-23.3-10.5-36.8c4.4-13.5,15.9-22.6,30.1-23.6l86-6.4
+						c6.7-0.5,12.1-4.4,14.6-10.6l32.6-79.8c5.4-13.2,17.5-21.3,31.8-21.3C314.4,35.3,326.5,43.5,331.9,56.7L331.9,56.7z"/>
+				</g>
+				</svg>
+			</div> -->
+		</div>
+	</div>
+	
+	<script src="main.js"></script>
+</body>
+</html>
+
